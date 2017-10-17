@@ -437,7 +437,7 @@ namespace TumblThree.Applications.Downloader
 
         private static string FileName(TumblrPost downloadItem)
         {
-            return downloadItem.Url.Split('/').Last();
+            return downloadItem.Id + '_' + downloadItem.Url.Split('/').Last();
         }
 
         protected static string FileLocation(string blogDownloadLocation, string fileName)
