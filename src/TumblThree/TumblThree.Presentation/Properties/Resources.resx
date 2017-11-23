@@ -364,7 +364,7 @@ The number is shared between all actively downloading blogs.</value>
     <value>Number of posts:</value>
   </data>
   <data name="Preview" xml:space="preserve">
-    <value>Preview:</value>
+    <value>Preview</value>
   </data>
   <data name="DownloadAudios" xml:space="preserve">
     <value>Download audio files</value>
@@ -388,7 +388,7 @@ The number is shared between all actively downloading blogs.</value>
     <value>Preview on/off</value>
   </data>
   <data name="BlogSettings" xml:space="preserve">
-    <value>Blog settings:</value>
+    <value>Blog settings</value>
   </data>
   <data name="GlobalSettings" xml:space="preserve">
     <value>Global settings:</value>
@@ -412,7 +412,7 @@ The number is shared between all actively downloading blogs.</value>
     <value>Download video meta</value>
   </data>
   <data name="DefaultSettingsForBlogs" xml:space="preserve">
-    <value>Settings applied to each blog upon addition:</value>
+    <value>These settings are applied to each blog upon addition:</value>
   </data>
   <data name="DownloadVideosShort" xml:space="preserve">
     <value>Download videos</value>
@@ -701,5 +701,47 @@ E.g.  great big car, bears searches for great big cars and bears.</value>
   </data>
   <data name="ToolTipVideoConnectionsDescription" xml:space="preserve">
     <value>The vt.tumblr.com host regularly closes connections if the number is too high.</value>
+  </data>
+  <data name="ExternalSettings" xml:space="preserve">
+    <value>External</value>
+  </data>
+  <data name="DownloadGfycat" xml:space="preserve">
+    <value>Download gfycat</value>
+  </data>
+  <data name="DownloadWebmshare" xml:space="preserve">
+    <value>Download webmshare</value>
+  </data>
+  <data name="ToolTipDownloadGfycat" xml:space="preserve">
+    <value>Download linked gfycat.com files</value>
+  </data>
+  <data name="ToolTipDownloadGfycatDescription" xml:space="preserve">
+    <value>Download externally hosted gfycat.com files</value>
+  </data>
+  <data name="ToolTipDownloadWebmshare" xml:space="preserve">
+    <value>Download linked webmshare.com files</value>
+  </data>
+  <data name="ToolTipDownloadWebmshareDescription" xml:space="preserve">
+    <value>Download externally hosted webmshare.com files</value>
+  </data>
+  <data name="DownloadImgur" xml:space="preserve">
+    <value>Download imgur</value>
+  </data>
+  <data name="ToolTipDownloadImgur" xml:space="preserve">
+    <value>Download linked imgur.com files</value>
+  </data>
+  <data name="ToolTipDownloadImgurDescription" xml:space="preserve">
+    <value>Download externally hosted imgur.com files</value>
+  </data>
+  <data name="ToolTipGfycatFiletype" xml:space="preserve">
+    <value>File type to download</value>
+  </data>
+  <data name="ToolTipGfycatFiletypeDescription" xml:space="preserve">
+    <value>Chose which file type you want to download</value>
+  </data>
+  <data name="ToolTipWebmshareFiletype" xml:space="preserve">
+    <value>File type to download</value>
+  </data>
+  <data name="ToolTipWebmshareFiletypeDescription" xml:space="preserve">
+    <value>Chose which file type you want to download</value>
   </data>
 </root>

@@ -5,6 +5,7 @@ using System.ComponentModel.Composition;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Threading;
 using System.Waf.Applications;
 using System.Windows.Input;
@@ -14,6 +15,7 @@ using TumblThree.Applications.Properties;
 using TumblThree.Applications.Services;
 using TumblThree.Applications.Views;
 using TumblThree.Domain;
+using TumblThree.Domain.Models;
 
 namespace TumblThree.Applications.ViewModels
 {
@@ -77,6 +79,11 @@ namespace TumblThree.Applications.ViewModels
         private string proxyPort;
         private string proxyUsername;
         private string proxyPassword;
+        private bool downloadGfycat;
+        private bool downloadImgur;
+        private bool downloadWebmshare;
+        private GfycatTypes gfycatType;
+        private WebmshareTypes webmshareType;
         private bool removeIndexAfterCrawl;
         private string secretKey;
         private bool showPicturePreview;
@@ -84,6 +91,7 @@ namespace TumblThree.Applications.ViewModels
         private int timeOut;
         private string timerInterval;
         private int videoSize;
+        private int settingsTabIndex;
 
         [ImportingConstructor]
         public SettingsViewModel(ISettingsView view, IShellService shellService, ICrawlerService crawlerService,
@@ -456,6 +464,36 @@ namespace TumblThree.Applications.ViewModels
             set { SetProperty(ref downloadTo, value); }
         }
 
+        public bool DownloadGfycat
+        {
+            get { return downloadGfycat; }
+            set { SetProperty(ref downloadGfycat, value); }
+        }
+
+        public GfycatTypes GfycatType
+        {
+            get { return gfycatType; }
+            set { SetProperty(ref gfycatType, value); }
+        }
+
+        public bool DownloadImgur
+        {
+            get { return downloadImgur; }
+            set { SetProperty(ref downloadImgur, value); }
+        }
+
+        public bool DownloadWebmshare
+        {
+            get { return downloadWebmshare; }
+            set { SetProperty(ref downloadWebmshare, value); }
+        }
+
+        public WebmshareTypes WebmshareType
+        {
+            get { return webmshareType; }
+            set { SetProperty(ref webmshareType, value); }
+        }
+
         public string Tags
         {
             get { return tags; }
@@ -472,6 +510,12 @@ namespace TumblThree.Applications.ViewModels
         {
             get { return timerInterval; }
             set { SetProperty(ref timerInterval, value); }
+        }
+
+        public int SettingsTabIndex
+        {
+            get { return settingsTabIndex; }
+            set { SetProperty(ref settingsTabIndex, value); }
         }
 
         public void ShowDialog(object owner)
@@ -628,6 +672,11 @@ namespace TumblThree.Applications.ViewModels
                 DownloadFrom = settings.DownloadFrom;
                 DownloadTo = settings.DownloadTo;
                 Tags = settings.Tags;
+                DownloadImgur = settings.DownloadImgur;
+                DownloadGfycat = settings.DownloadGfycat;
+                DownloadWebmshare = settings.DownloadWebmshare;
+                GfycatType = settings.GfycatType;
+                WebmshareType = settings.WebmshareType;
                 DownloadRebloggedPosts = settings.DownloadRebloggedPosts;
                 AutoDownload = settings.AutoDownload;
                 ForceSize = settings.ForceSize;
@@ -639,6 +688,7 @@ namespace TumblThree.Applications.ViewModels
                 ProxyUsername = settings.ProxyUsername;
                 ProxyPassword = settings.ProxyPassword;
                 TimerInterval = settings.TimerInterval;
+                SettingsTabIndex = settings.SettingsTabIndex;
             }
             else
             {
@@ -685,6 +735,11 @@ namespace TumblThree.Applications.ViewModels
                 DownloadFrom = string.Empty;
                 DownloadTo = string.Empty;
                 Tags = string.Empty;
+                DownloadImgur = false;
+                DownloadGfycat = false;
+                DownloadWebmshare = false;
+                GfycatType = GfycatTypes.Mp4;
+                WebmshareType = WebmshareTypes.Mp4;
                 DownloadRebloggedPosts = true;
                 AutoDownload = false;
                 ForceSize = false;
@@ -696,6 +751,7 @@ namespace TumblThree.Applications.ViewModels
                 ProxyHost = string.Empty;
                 ProxyPort = string.Empty;
                 TimerInterval = "22:40:00";
+                SettingsTabIndex = 0;
             }
         }
 
@@ -769,6 +825,11 @@ namespace TumblThree.Applications.ViewModels
             settings.OAuthCallbackUrl = OAuthCallbackUrl;
             settings.AutoDownload = AutoDownload;
             settings.ForceSize = ForceSize;
+            settings.DownloadImgur = DownloadImgur;
+            settings.DownloadGfycat = DownloadGfycat;
+            settings.DownloadWebmshare = DownloadWebmshare;
+            settings.GfycatType = GfycatType;
+            settings.WebmshareType = WebmshareType;
             settings.CheckDirectoryForFiles = CheckDirectoryForFiles;
             settings.DownloadUrlList = DownloadUrlList;
             settings.PortableMode = PortableMode;
@@ -777,6 +838,7 @@ namespace TumblThree.Applications.ViewModels
             settings.ProxyUsername = ProxyUsername;
             settings.ProxyPassword = ProxyPassword;
             settings.TimerInterval = TimerInterval;
+            settings.SettingsTabIndex = SettingsTabIndex;
         }
 
         private void FolderBrowserPropertyChanged(object sender, PropertyChangedEventArgs e)

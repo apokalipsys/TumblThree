@@ -58,6 +58,8 @@
     <Compile Include="..\SharedAssemblyInfo.cs">
       <Link>Properties\SharedAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="Attributes\LocalizedDescriptionAttribute.cs" />
+    <Compile Include="Converter\EnumDescriptionTypeConverter.cs" />
     <Compile Include="JsonFormatter.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Models\DetailsBlog.cs" />
@@ -65,6 +67,7 @@
     <Compile Include="Models\BlogFactory.cs" />
     <Compile Include="Models\BlogTypes.cs" />
     <Compile Include="Models\Files.cs" />
+    <Compile Include="Models\GfycatType.cs" />
     <Compile Include="Models\IBlog.cs" />
     <Compile Include="Models\IBlogFactory.cs" />
     <Compile Include="Models\ICrawlerData.cs" />
@@ -75,6 +78,7 @@
     <Compile Include="Models\TumblrTagSearchBlog.cs" />
     <Compile Include="Models\TumblrSearchBlog.cs" />
     <Compile Include="Models\Validator.cs" />
+    <Compile Include="Models\WebmshareTypes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
